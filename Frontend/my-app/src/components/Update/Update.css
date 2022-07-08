@@ -1,0 +1,23 @@
+.Create-flight {
+  border: 1rem;
+  background-color: #f7b972;
+  margin-left: 50rem;
+  margin-right: 50rem;
+  margin-top: 10rem;
+  border-radius: 3%;
+}
+
+input,
+label {
+  margin-left: 1rem;
+  margin-left: 1rem;
+}
+
+label:first-child {
+  margin-top: 1rem;
+}
+
+.btn {
+  margin: 1rem 1rem;
+  font-size: 1rem;
+}

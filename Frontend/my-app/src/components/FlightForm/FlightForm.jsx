@@ -1,119 +1,148 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./FlightForm.css";
 
 export const FlightForm = () => {
   const flightNumberRef = useRef();
+  const planeRef = useRef();
+  const pilotRef = useRef();
   const departureDateRef = useRef();
   const arrivalDateRef = useRef();
   const departureTimeRef = useRef();
+  const arrivalTimeRef = useRef();
   const departureAirportRef = useRef();
   const arrivalAirportRef = useRef();
-  const currentNumberRef = useRef();
-  const passengerNumberRef = useRef();
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       await axios.post("http://localhost:8087/flights", {
-        flightNumber: flightNumberRef.current.value,
-        departureDate: departureDateRef.current.value,
-        arrivalDate: arrivalDateRef.current.value,
-        departureTime: departureTimeRef.current.value,
-        departureAirport: departureAirportRef.current.value,
-        arrivalAirport: arrivalAirportRef.current.value,
-        currentNumPassengers: currentNumberRef.current.value,
-        passengerLimit: passengerNumberRef.current.value,
+        FlightNumber: flightNumberRef.current.value,
+        Plane: planeRef.current.value,
+        Pilot: pilotRef.current.value,
+        DepartureDate: departureDateRef.current.value,
+        ArrivalDate: arrivalDateRef.current.value,
+        DepartureTime: departureTimeRef.current.value,
+        ArrivalTime: arrivalTimeRef.current.value,
+        DepartureAirport: departureAirportRef.current.value,
+        ArrivalAirport: arrivalAirportRef.current.value,
       });
-      navigate("../", { replace: true });
+      navigate("../FlightControl", { replace: true });
     } catch (error) {
-      console.log("Something Went Wrong");
+      console.log("Somthing went wrong");
     }
   };
 
   return (
     <>
-      <form className="MyForm" onSubmit={handleSubmit}>
-        <label htmlFor="flightNumber">Flight Number:</label>
-        <div>
-          <input
-            id="flightNumber"
-            type="text"
-            placeholder="Flight Number"
-            ref={flightNumberRef}
-          />
-        </div>
+      <div className="create-flight">
+        <div className="Container-fluid">
+          <div class="row">
+            <form className="MyForm ">
+              <label htmlFor="flightNumber">Flight Number:</label>
+              <div>
+                <input
+                  id="flightNumber"
+                  type="text"
+                  placeholder="Flight Number"
+                  ref={flightNumberRef}
+                />
+              </div>
 
-        <label htmlFor="departureDate">Departure Date:</label>
-        <div>
-          <input
-            id="departureDate"
-            type="text"
-            placeholder="Departure Date"
-            ref={departureDateRef}
-          />
-        </div>
+              <label htmlFor="plane">Plane:</label>
+              <div>
+                <input
+                  id="plane"
+                  type="text"
+                  placeholder="Plane"
+                  ref={planeRef}
+                />
+              </div>
 
-        <label htmlFor="arrivalDate">Arrival Date:</label>
-        <div>
-          <input
-            id="arrivalDate"
-            type="text"
-            placeholder="Arrival Date"
-            ref={arrivalDateRef}
-          />
-        </div>
-        <label htmlFor="departureTime">Departure Time:</label>
-        <div>
-          <input
-            id="departureTime"
-            type="text"
-            placeholder="Departure Time"
-            ref={departureTimeRef}
-          />
-        </div>
-        <label htmlFor="departureAirport">Departure Airport:</label>
-        <div>
-          <input
-            id="Departure Airport"
-            type="text"
-            placeholder="Departure Airport"
-            ref={departureAirportRef}
-          />
-        </div>
-        <label htmlFor="arrivalAirport">Arrival Airport:</label>
-        <div>
-          <input
-            id="arrivalAirport"
-            type="text"
-            placeholder="Arrival Airport"
-            ref={arrivalAirportRef}
-          />
-        </div>
-        <label htmlFor="currentNumPassengers">
-          Current Number of Passengers:
-        </label>
-        <div>
-          <input
-            id="currentNumPassengers"
-            type="text"
-            placeholder="Current Number of Passengers"
-            ref={currentNumberRef}
-          />
-        </div>
-        <label htmlFor="passengerLimit">Passenger Limit:</label>
-        <div>
-          <input
-            id="passengerLimit"
-            type="text"
-            placeholder="Passenger Limit"
-            ref={passengerNumberRef}
-          />
-        </div>
+              <label htmlFor="pilot">Pilot:</label>
+              <div>
+                <input
+                  id="pilot"
+                  type="text"
+                  placeholder="Pilot"
+                  ref={pilotRef}
+                />
+              </div>
 
-        <input type="submit" value="Add Flight" />
-      </form>
+              <div class=" col-lg-6">
+                <label htmlFor="DepartureDate">Departure Date:</label>
+                <div>
+                  <input
+                    id="DepartureDate"
+                    type="date"
+                    placeholder="Departure Date"
+                    ref={departureDateRef}
+                  />
+                </div>
+
+                <label htmlFor="ArrivalDate">Arrival Date:</label>
+                <div>
+                  <input
+                    id="ArrivalDate"
+                    type="date"
+                    placeholder="Arrival Date"
+                    ref={arrivalDateRef}
+                  />
+                </div>
+              </div>
+
+              <label htmlFor="DepartureTime">Departure Time: </label>
+              <div>
+                <input
+                  id="DepartureTime"
+                  type="time"
+                  placeholder="Departure Time"
+                  ref={departureTimeRef}
+                />
+              </div>
+
+              <label htmlFor="ArrivalTime">Arrival Time: </label>
+              <div>
+                <input
+                  id="ArrivalTime"
+                  type="time"
+                  placeholder="Arrival Time"
+                  ref={arrivalTimeRef}
+                />
+              </div>
+
+              <label htmlFor="DepartureAirport">Departure Airport:</label>
+              <div>
+                <input
+                  id="DepartureAirport"
+                  type="text"
+                  placeholder="Departure Airport"
+                  ref={departureAirportRef}
+                />
+              </div>
+
+              <label htmlFor=" ArrivalAirport">Arrival Airport: </label>
+              <div>
+                <input
+                  id=" ArrivalAirport"
+                  type="text"
+                  placeholder="Arrival Airport"
+                  ref={arrivalAirportRef}
+                />
+              </div>
+
+              <Button className="btn" onClick={handleSubmit}>
+                Create Flight
+              </Button>
+            </form>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

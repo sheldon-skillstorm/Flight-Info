@@ -1,0 +1,50 @@
+.error-card {
+  margin: 0rem 0rem 30rem 30rem;
+  padding: 1.5rem;
+  width: 50rem;
+  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #eb984e;
+  border-radius: 7px;
+}
+.error-card:hover {
+  transform: scale(1.5);
+}
+
+.et-img {
+  border-radius: 50%;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+}
+.card-interior {
+  display: flex;
+}
+
+.error-text {
+  margin-left: 10rem;
+}
+p {
+  font-size: xx-large;
+}
+
+.whole-page {
+  background-color: #fdf2e9;
+  height: 200rem;
+  padding-top: 15rem;
+}
+
+.phone-home {
+  margin-left: 20rem;
+  text-decoration: none;
+  color: black;
+  border: 2px solid #eb984e;
+  border-radius: 4px;
+}
+.phone-home:hover {
+  color: #fdf2e9;
+  background-color: #eb984e;
+}
+.four {
+  font-size: 100px;
+}

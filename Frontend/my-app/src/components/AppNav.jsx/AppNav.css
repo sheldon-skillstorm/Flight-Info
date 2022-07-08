@@ -1,0 +1,30 @@
+.nav {
+  list-style: none;
+  display: flex;
+
+  gap: 0.8rem;
+  background-color: #f7b972;
+  height: 3.5rem;
+}
+.nav-sign-in {
+  margin-left: 108rem;
+  margin-top: 0.4rem;
+  text-decoration: none !important;
+  font-size: 0.8rem;
+}
+Link {
+  text-decoration: none;
+}
+.nav-icon {
+  margin-top: 0.4rem;
+  font-size: 1.6rem;
+}
+
+.nav-link2 {
+  text-decoration: none;
+  color: black;
+}
+.nav-link2:hover {
+  text-decoration: none;
+  color: #fdf2e9;
+}

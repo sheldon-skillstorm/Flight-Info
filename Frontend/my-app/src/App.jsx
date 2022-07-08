@@ -1,19 +1,23 @@
-import CloudTables from "@cloudtables/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AppNav } from "./features";
-import { Flights, Home, Error } from "./pages";
-import { FlightForm } from "./components/FlightForm";
+import { AppNav } from "./components/AppNav.jsx";
+import { Flights, Home, Error, CreateFlight } from "./pages";
+
+import { Update } from "./components/Update";
+import { FlightControl } from "./pages/FlightControl";
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <AppNav />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/flights" element={<Flights />} />
           <Route path="*" element={<Error />} />
-          <Route path="/new-flights" element={<FlightForm />} />
+          <Route path="/CreateFlight" element={<CreateFlight />} />
+          <Route path="/update/:id" element={<Update />}></Route>
+          <Route path="/FlightControl" element={<FlightControl />}></Route>
         </Routes>
       </BrowserRouter>
     </>

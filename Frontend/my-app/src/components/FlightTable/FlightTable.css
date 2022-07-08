@@ -1,0 +1,41 @@
+.flight-table {
+  margin: 0rem 20rem 0rem 30rem;
+}
+
+tr:nth-child(even) {
+  background-color: #fdf2e9;
+}
+
+thead {
+  background-color: #f7b972;
+  font-weight: bold;
+  border-bottom: #f7b972;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+table {
+  min-width: 80rem;
+  border-collapse: collapse;
+  font-size: 1em;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+}
+.table thead,
+.table td {
+  padding: 12px 15px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+.table tbody tr:last-of-type {
+  border-bottom: 2px solid #f7b972;
+}
+
+.search2 {
+  margin: 8rem 2rem 2rem 30rem !important;
+}
